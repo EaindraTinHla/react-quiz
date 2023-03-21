@@ -12,6 +12,9 @@ const app = express();
 //middleware
 app.use(express.json());
 app.use(cors());
+app.get('/', (req,res) => {
+  res.setHeader("Access.Control.Allow.Credentials","true");
+});
 
 //Route
 app.use('/api/quiz', QuizRouter)
